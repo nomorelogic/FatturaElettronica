@@ -1,0 +1,32 @@
+object dmMain: TdmMain
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 330
+  HorizontalOffset = 694
+  VerticalOffset = 235
+  Width = 427
+  object cnSqlLite3: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'C:\dev\llab\4m\eFatt\data\eFatt.db3'
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    left = 56
+    top = 25
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = cnSqlLite3
+    left = 175
+    top = 25
+  end
+  object tbMeta: TSQLQuery
+    FieldDefs = <>
+    Database = cnSqlLite3
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 167
+    top = 104
+  end
+end
